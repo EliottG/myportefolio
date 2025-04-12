@@ -1,5 +1,4 @@
-// src/contexts/LanguageContext.tsx
-import { createContext, useContext, useState, ReactNode } from "react"
+import { createContext, useContext, useState, useEffect, ReactNode } from "react"
 import { translations } from "../i18n/translations"
 
 type Language = "fr" | "en"
@@ -7,16 +6,15 @@ type Language = "fr" | "en"
 interface LanguageContextProps {
   language: Language
   setLanguage: (lang: Language) => void
-  t: typeof translations["en"] // Type des traductions (ex : "fr" ou "en")
+  t: typeof translations["en"]
 }
 
 const LanguageContext = createContext<LanguageContextProps>({
   language: "en",
   setLanguage: () => {},
-  t: translations.fr
+  t: translations.en
 })
 
-// Hook personnalisé pour accéder facilement au contexte
 export function useLanguage() {
   return useContext(LanguageContext)
 }
@@ -26,13 +24,28 @@ interface Props {
 }
 
 export function LanguageProvider({ children }: Props) {
-  const [language, setLanguage] = useState<Language>("en")
+  const [language, setLanguageState] = useState<Language>("en")
 
-  // On va chercher les bonnes traductions
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang)
+    localStorage.setItem("lang", lang)
+  }
+
+  useEffect(() => {
+    const savedLang = localStorage.getItem("lang") as Language | null
+
+    if (savedLang === "fr" || savedLang === "en") {
+      setLanguageState(savedLang)
+    } else {
+      const browserLang = navigator.language.startsWith("fr") ? "fr" : "en"
+      setLanguage(browserLang)
+    }
+  }, [])
+
   const value = {
     language,
     setLanguage,
-    t: translations[language]
+    t: translations[language],
   }
 
   return (
