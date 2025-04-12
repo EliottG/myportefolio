@@ -7,7 +7,7 @@ const Skills: FC = () => {
   const skillCategories = [
     {
       title: "💻 Front-End",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN/UI"],
+      skills: ["React (JS/Native)", "Next.js", "TypeScript", "Figma", "Tailwind CSS", "ShadCN/UI"],
     },
     {
       title: "🖲️ Back-End",
@@ -15,7 +15,7 @@ const Skills: FC = () => {
     },
     {
       title: "☁️ Salesforce",
-      skills: ["Apex", "LWC", "Flow Builder", "SOQL", "Salesforce CLI"],
+      skills: ["Apex", "LWC", "Flow Builder", "Visualforce", "SOQL", "Salesforce CLI"],
     },
     {
       title: "🛠️ Outils / DevOps",
@@ -28,8 +28,8 @@ const Skills: FC = () => {
       <div className="container mx-auto px-4">
         {/* Titre principal */}
         <div className="text-center pb-12">
-          <h2 className="text-4xl font-extrabold bg-primary text-transparent bg-clip-text">
-            {t.skills.title}
+          <h2 className="text-4xl font-extrabold text-primary">
+            {t.skills.title} 💪
           </h2>
         </div>
 

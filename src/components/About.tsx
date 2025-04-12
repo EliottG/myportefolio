@@ -13,7 +13,7 @@ const About: FC = () => {
     <section id="about" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-extrabold text-center pb-12 text-primary">
-          {t.about.title}
+          {t.about.title} 🤔
         </h2>
 
         <div className="max-w-3xl mx-auto text-center text-gray-700 text-lg leading-relaxed px-4">

@@ -13,18 +13,21 @@ const Projects: FC = () => {
       image: "/images/andle.png",
       link: "https://saas-retro-geoffroys-projects-474d33dd.vercel.app/",
       techInfo: "Next.js 14 / Auth.js / Stripe / PostgreSQL / Prisma",
+      france: true
     },
     {
       ...t.projects.project2,
       image: "/images/englearn.png",
       link: "https://goenglearn.vercel.app/",
       techInfo: "React JS / Node JS / PostgreSQL",
+      english: true
     },
     {
       ...t.projects.project3,
       image: "/images/imageedit.png",
       link: "https://img-editor-opal.vercel.app/",
       techInfo: "React JS",
+      english: true
     },
   ]
 
@@ -32,14 +35,14 @@ const Projects: FC = () => {
     <section id="projects" className="py-20  text-white bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-extrabold text-center pb-12 bg-white/10 text-primary px-4 py-2 rounded-xl ">
-          {t.projects.title}
+          {t.projects.title} 🚧
         </h2>
 
-        <div className="flex flex-wrap md:flex-row flex-col items-center justify-center gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-wrap md:flex-row flex-col items-center justify-center gap-8 max-w-5xl mx-auto">
         {translatedProjects.map((project, index) => (
             <Card
             key={index}
-            className="relative h-96 w-full md:w-[calc(50%-1rem)] rounded-2xl overflow-hidden shadow-lg border-0 transition-all duration-300"
+            className="relative h-82 w-full md:w-[calc(50%-1rem)] rounded-2xl overflow-hidden shadow-lg border-0 transition-all duration-300"
           >
               <div
                 className="absolute inset-0 bg-cover bg-center"
@@ -50,7 +53,7 @@ const Projects: FC = () => {
 
               {/* Contenu principal */}
               <div className="absolute bottom-0 w-full bg-black/40 p-6 text-white z-10 backdrop-blur-sm">
-                <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+                <h3 className="text-xl font-bold mb-1 flex gap-4 justify-between">{project.title} {project.france && <img alt="french flag by freepik" src="./images/france.png" width={24} />} {project.english && <img alt="UK flag by freepik" src="./images/united-kingdom.png" width={24}/>}</h3>
                 <p className="text-sm text-white/90 mb-4">{project.description}</p>
 
                 <div className="flex flex-wrap  items-center gap-3">

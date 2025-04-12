@@ -44,8 +44,8 @@ const Contact: FC = () => {
     <section id="contact" className="py-20 ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold bg-primary text-transparent bg-clip-text">
-            {t.contact.title}
+          <h2 className="text-4xl font-extrabold text-primary">
+            {t.contact.title} 📧
           </h2>
         </div>
 

@@ -57,8 +57,8 @@ const Hero: FC = () => {
           {t.hero.subtitle}
         </p>
 
-        <a href="#about">
-          <Button className="text-md px-6 py-3 bg-primary hover:opacity-90 transition cursor-pointer">
+        <a href="#about" className="w-48">
+          <Button className="text-md py-4 w-full bg-primary hover:opacity-90 transition cursor-pointer">
             {t.navbar.about} <ArrowDown />
           </Button>
         </a>
