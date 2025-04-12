@@ -18,8 +18,6 @@ export const translations = {
         description1: "Développeur Full Stack JavaScript basé en France, je cumule plus de 4 ans d'expérience dans le développement web. Diplômé d’un Master of Science (Bac +5) à Epitech en juillet 2024, j'occupe actuellement un poste de développeur Salesforce chez Cloudity à Bordeaux.",
         description2: "Je suis aujourd’hui en quête d’une opportunité à l’international pour relever de nouveaux défis techniques et humains. Si mon profil vous intéresse, n’hésitez pas à me contacter !"
       },
-      success: 'Message envoyé avec succès, merci !',
-      error: 'Une erreur est survenue, veuillez me contacter via LinkedIn ou ultérieurement',
 
       skills: {
         title: 'Compétences'
@@ -47,7 +45,10 @@ export const translations = {
         sending: 'Envoi en cours',
         emailLabel: "E-mail",
         messageLabel: "Message",
-        sendButton: "Envoyer"
+        sendButton: "Envoyer",
+        success: 'Message envoyé avec succès, merci !',
+        error: 'Une erreur est survenue, veuillez me contacter via LinkedIn ou ultérieurement',
+  
       },
       footer: {
         rights: "Tous droits réservés."
