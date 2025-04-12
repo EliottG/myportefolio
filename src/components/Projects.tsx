@@ -13,20 +13,25 @@ const Projects: FC = () => {
       image: "/images/andle.png",
       link: "https://saas-retro-geoffroys-projects-474d33dd.vercel.app/",
       techInfo: "Next.js 14 / Auth.js / Stripe / PostgreSQL / Prisma",
-      france: true
+      france: true,
+      english: false,
+
     },
     {
       ...t.projects.project2,
       image: "/images/englearn.png",
       link: "https://goenglearn.vercel.app/",
       techInfo: "React JS / Node JS / PostgreSQL",
-      english: true
+      english: true,
+      france: false
+
     },
     {
       ...t.projects.project3,
       image: "/images/imageedit.png",
       link: "https://img-editor-opal.vercel.app/",
       techInfo: "React JS",
+      france: false,
       english: true
     },
   ]
