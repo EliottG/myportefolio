@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+* {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-primary: #ef4444;      /* red-500 */
+  --color-primary-400: #f87171;  /* red-400 */
+  --color-primary-300: #fca5a5;
+
+  --color-secondary: #f97316;      /* orange-500 */
+  --color-secondary-400: #fb923c;  /* orange-400 */
+  --color-secondary-300: #fdba74;
+
+  --color-tertiary: #eab308;      /* yellow-500 */
+  --color-tertiary-400: #facc15;
+  --color-tertiary-300: #fde047;
+}
+
+html body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
+} 
