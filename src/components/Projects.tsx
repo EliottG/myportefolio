@@ -35,12 +35,12 @@ const Projects: FC = () => {
           {t.projects.title}
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {translatedProjects.map((project, index) => (
+        <div className="flex flex-wrap md:flex-row flex-col items-center justify-center gap-8 max-w-4xl mx-auto">
+        {translatedProjects.map((project, index) => (
             <Card
-              key={index}
-              className="relative h-96 rounded-2xl overflow-hidden shadow-lg border-0 transition-all duration-300"
-            >
+            key={index}
+            className="relative h-96 w-full md:w-[calc(50%-1rem)] rounded-2xl overflow-hidden shadow-lg border-0 transition-all duration-300"
+          >
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${project.image})` }}
@@ -53,7 +53,7 @@ const Projects: FC = () => {
                 <h3 className="text-xl font-bold mb-1">{project.title}</h3>
                 <p className="text-sm text-white/90 mb-4">{project.description}</p>
 
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap  items-center gap-3">
                   <Popover>
                     <PopoverTrigger asChild>
                       <button
