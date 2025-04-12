@@ -7,11 +7,11 @@ const Skills: FC = () => {
   const skillCategories = [
     {
       title: "💻 Front-End",
-      skills: ["React (JS/Native)", "Next.js", "TypeScript", "Figma", "Tailwind CSS", "ShadCN/UI"],
+      skills: ["React (JS/Native)", "Next.js", "TypeScript", "Figma", "Tailwind CSS", "Storybook"],
     },
     {
       title: "🖲️ Back-End",
-      skills: ["Node.js", "Express", "Java (Spring)", "MongoDB, MySQL, PostgreSQL", "PHP (Symfony)"],
+      skills: ["Node.js", "Express", "Java (Spring)", "MongoDB, MySQL, PostgreSQL", "PHP (Symfony)", "Python"],
     },
     {
       title: "☁️ Salesforce",
@@ -19,7 +19,7 @@ const Skills: FC = () => {
     },
     {
       title: "🛠️ Outils / DevOps",
-      skills: ["Git", "GitLab / GitHub", "Vercel", "Docker", "Figma", "Postman", "Jira"],
+      skills: ["Git", "GitLab / GitHub", "Vercel", "Docker", "Postman", "Jira"],
     },
   ]
 
@@ -38,7 +38,7 @@ const Skills: FC = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-200"
+              className="bg-white/80 backdrop-blur-sm border border-gray-200 shadow-tertiary-300 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-200"
             >
               <h3 className="text-xl font-semibold text-secondary mb-4 tracking-tight">
                 {category.title}

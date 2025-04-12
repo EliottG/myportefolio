@@ -7,15 +7,15 @@ const Footer: FC = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="w-full py-6 bg-gray-100 border-t">
-      <div className="container mx-auto px-4 flex flex-col items-center justify-between gap-4 text-center text-gray-600 sm:flex-row">
-        <div>© {year} - EliottGDC. {t.footer.rights}</div>
-        <div className="flex gap-4">
+    <footer className="w-full py-6 bg-secondary-400 ">
+      <div className="container mx-auto px-4 flex items-center gap-4 justify-end text-center text-white sm:flex-row">
+        <div className="flex-1">© {year} - EliottGDC. {t.footer.rights}</div>
+        <div className="absolute flex gap-4">
           <a
             href="https://github.com/EliottG"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-primary transition-colors"
+            className="text-white hover:text-gray-200"
             aria-label="GitHub"
           >
             <Github className="w-5 h-5" />
@@ -24,7 +24,7 @@ const Footer: FC = () => {
             href="https://www.linkedin.com/in/eliott-geoffroy/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-primary transition-colors"
+            className="text-white hover:text-gray-200"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
