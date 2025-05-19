@@ -7,9 +7,19 @@ import VideoModal from "./VideoModal"
 
 const Projects: FC = () => {
   const { t } = useLanguage()
-  const [activeVideo, setActiveVideo] = useState(null);
+  const [activeVideo, setActiveVideo] = useState<translatedProjectType | null>(null);
 
-  const translatedProjects = [
+  type translatedProjectType = {
+    title: string,
+    description: string,
+    image: string,
+    link?: string,
+    techInfo: string,
+    france: boolean;
+    english: boolean;
+    videoUrl?: string;
+  }
+  const translatedProjects : Array<translatedProjectType> = [
     {
       ...t.projects.project1,
       image: "/images/andle.png",
@@ -47,7 +57,7 @@ const Projects: FC = () => {
    
   ]
 
-  const openVideoModal = (project) => {
+  const openVideoModal = (project: translatedProjectType) => {
     setActiveVideo(project);
   };
 
@@ -108,7 +118,7 @@ const Projects: FC = () => {
                     className=" cursor-pointer flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium bg-[var(--color-primary)] hover:opacity-90 transition"
                   >
                     <Play className="w-4 h-4" />
-                    {t.projects.watchVideo || "Watch Demo"}
+                    {t.projects.watchDemo || "Watch Demo"}
                   </button>
 }
 {project.link &&

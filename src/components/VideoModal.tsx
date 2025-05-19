@@ -2,7 +2,7 @@ import { FC } from "react"
 import { X } from "lucide-react"
 
 interface VideoModalProps {
-    videoUrl: string;
+    videoUrl?: string;
     isOpen: boolean;
     onClose: () => void;
     title: string;

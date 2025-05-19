@@ -23,6 +23,7 @@ export const translations = {
         title: 'Compétences'
       },
       projects: {
+        watchDemo: "Voir la démo",
         title: "Mes Projets",
         cta: 'Voir le projet',
         techInfo: 'Informations techniques',
@@ -84,6 +85,7 @@ export const translations = {
         title: "My Projects",
         cta: "See project",
         techInfo: 'Technical informations',
+        watchDemo: "Watch demo",
         project1: {
           title: "Andle",
           description: "An app designed for project managers."
