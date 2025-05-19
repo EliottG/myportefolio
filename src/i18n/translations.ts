@@ -37,6 +37,10 @@ export const translations = {
         project3: {
             title: "Img Editor",
             description: "Modifier votre image en toute simplicité"
+        },
+        project4: {
+          title: "Application Nurseboard",
+          description: "Application mobile permettant de faciliter la vie des infermiers libéraux (pas déployée)."
         }
       },
       contact: {
@@ -91,6 +95,10 @@ export const translations = {
         project3: {
           title: "Img Editor",
           description: "Easily edit your images with just a few clicks."
+        },
+        project4: {
+          title: "Nurseboard App",
+          description: "Mobile application to make life easier for self-employed nurses (not deployed)."
         }
       },
       contact: {

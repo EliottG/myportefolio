@@ -1,11 +1,13 @@
-import { FC } from "react"
+import { FC, useState } from "react"
 import { Card } from "./ui/card"
 import { useLanguage } from "../contexts/LanguageContext"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
-import { Info, ExternalLink } from "lucide-react"
+import { Info, ExternalLink, Play } from "lucide-react"
+import VideoModal from "./VideoModal"
 
 const Projects: FC = () => {
   const { t } = useLanguage()
+  const [activeVideo, setActiveVideo] = useState(null);
 
   const translatedProjects = [
     {
@@ -16,6 +18,14 @@ const Projects: FC = () => {
       france: true,
       english: false,
 
+    },
+    {
+      ...t.projects.project4,
+      image: "/images/nurseboard.png",
+      videoUrl: "/nurseboard.mp4",
+      techInfo: "React Native / Java / Spring Boot / PostgreSQL",
+      france: true,
+      english: false
     },
     {
       ...t.projects.project2,
@@ -34,7 +44,16 @@ const Projects: FC = () => {
       france: false,
       english: true
     },
+   
   ]
+
+  const openVideoModal = (project) => {
+    setActiveVideo(project);
+  };
+
+  const closeVideoModal = () => {
+    setActiveVideo(null);
+  };
 
   return (
     <section id="projects" className="py-20  text-white bg-gray-50">
@@ -56,7 +75,6 @@ const Projects: FC = () => {
 
               <div className="absolute inset-0 " />
 
-              {/* Contenu principal */}
               <div className="absolute bottom-0 w-full bg-black/40 p-6 text-white z-10 backdrop-blur-sm">
                 <h3 className="text-xl font-bold mb-1 flex gap-4 justify-between">{project.title} {project.france && <img alt="french flag by freepik" src="./images/france.png" width={24} />} {project.english && <img alt="UK flag by freepik" src="./images/united-kingdom.png" width={24}/>}</h3>
                 <p className="text-sm text-white/90 mb-4">{project.description}</p>
@@ -84,6 +102,16 @@ const Projects: FC = () => {
                     </ul>
                     </PopoverContent>
                   </Popover>
+                  {project.videoUrl &&
+                  <button
+                    onClick={() => openVideoModal(project)}
+                    className=" cursor-pointer flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium bg-[var(--color-primary)] hover:opacity-90 transition"
+                  >
+                    <Play className="w-4 h-4" />
+                    {t.projects.watchVideo || "Watch Demo"}
+                  </button>
+}
+{project.link &&
 
                   <a
                     href={project.link}
@@ -91,15 +119,24 @@ const Projects: FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium bg-[var(--color-primary)] hover:opacity-90 transition"
                   >
-                    {t.projects.cta || "Voir le projet"}
                     <ExternalLink className="w-4 h-4" />
+                    {t.projects.cta || "Voir le projet"}
                   </a>
+}
                 </div>
               </div>
             </Card>
           ))}
         </div>
       </div>
+      {activeVideo && (
+        <VideoModal
+          videoUrl={activeVideo.videoUrl}
+          isOpen={!!activeVideo}
+          onClose={closeVideoModal}
+          title={activeVideo.title}
+        />
+      )}
     </section>
   )
 }
